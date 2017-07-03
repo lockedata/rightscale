@@ -1,11 +1,58 @@
-# 
+---
+output: 
+  md_document:
+    variant: markdown_github
+---
+# rightscale
 
-The goal of  is to ...
+Use rightscale to interface with [rightscale.com](https://rightscale.com) for cloud pricing, management, and optimisation
 
-## Example
+## Installation
+Install from github with devtools
 
-This is a basic example which shows you how to solve a common problem:
+```{r eval=FALSE}
+if(!require(devtools)) install.packages(devtools)
+devtools::install_github("locakedata/rightscale")
+```
 
-``` r
-## basic example code
+## Examples
+
+Here some basic examples
+
+```{r}
+if(!require(rightscale)) devtools::load_all()
+library(rightscale)
+
+authenticate("fa4d643a3b2b95ac59ec0ad6381e86267abbe278")
+clouds<-list_clouds()
+tibble::glimpse(clouds)
+
+```
+
+```{r}
+acloud<-get_cloud(1)
+tibble::glimpse(acloud)
+
+```
+
+```{r}
+anothercloud<-get_cloud(name="EC2 us-east-1")
+tibble::glimpse(anothercloud)
+
+```
+
+```{r}
+prices<-list_prices()
+tibble::glimpse(prices)
+
+```
+
+```{r}
+aprice<-get_price(547725001)
+tibble::glimpse(aprice)
+```
+
+## Tests
+```{r}
+devtools::test()
 ```

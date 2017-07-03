@@ -1,8 +1,9 @@
 Package: rightscale
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Interface with RightScale
+Version: 0.0.1
+Authors@R: person("Steph", "Locke", email = "steph@itsalocke.com", role = c("aut", "cre"))
+Description: Work with information from <https://rightscale.com>
+             about cloud pricing.
 Depends: R (>= 3.4.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -12,3 +13,10 @@ Suggests: covr,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Imports: httr,
+    glue,
+    jsonlite,
+    tibble,
+    tidyr
+Suggests: devtools
+RoxygenNote: 6.0.1
