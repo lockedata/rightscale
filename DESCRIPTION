@@ -11,12 +11,12 @@ LazyData: true
 Suggests: covr,
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    devtools
 VignetteBuilder: knitr
 Imports: httr,
     glue,
     jsonlite,
     tibble,
     tidyr
-Suggests: devtools
 RoxygenNote: 6.0.1
